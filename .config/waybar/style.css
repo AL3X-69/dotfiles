@@ -1,0 +1,18 @@
+* {
+    border:        none;
+    border-radius: 0;
+    font-family:   Inconsolata;
+    font-size:     17px;
+    font-weight:     bold;
+    box-shadow:    none;
+    text-shadow:   none;
+    transition-duration: 0s;
+}
+
+window {
+    background: rgba(1, 1, 1, 0);
+}
+
+window#waybar.solo {
+    background: rgba(1, 1, 1, 0);
+}

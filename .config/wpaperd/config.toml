@@ -1,0 +1,7 @@
+[default]
+duration = "30m"
+mode = "center"
+sorting = "ascending"
+
+[any]
+path = "/home/alex6/Images/wallpapers"
