@@ -1,7 +1,16 @@
+$background: rgba(64, 64, 64, 0.5);
+$background-alt: rgba(64, 64, 64, 0.6);
+$foreground: #FFFFFF;
+$primary: #FF0800;
+$secondary: #00BFFF;
+$alert: #A54242;
+$disabled: #A9B1D6;
+
 * {
   border: none;
   border-radius: 0px;
   font-family: "JetBrainsMono Nerd Font", "MesloLGS Nerd Font", "Font Awesome";
+  //font-family: "FiraCode Nerd Font", "Noto Color Emoji";
   font-size: 9pt;
   min-height: 0;
   padding: 0;
@@ -9,10 +18,10 @@
 }
 
 window#waybar {
-  background: rgba(64, 64, 64, 0.5);
-  color: #FFFFFF;
-  /*  border: 2px solid #ea9a97;*/
-  /*  border-radius: 12px;*/
+  background: $background;
+  color: $foreground;
+/*  border: 2px solid #ea9a97;*/
+/*  border-radius: 12px;*/
 }
 
 #clock,
@@ -37,23 +46,28 @@ window#waybar {
 
 #workspaces button {
   padding: 0 2px;
-  color: #FFFFFF;
+  color: $foreground;
   background: transparent;
+ 
 }
 
 #workspaces button.active {
-  background: rgba(64, 64, 64, 0.6);
+  background: $background-alt;
   padding: 2px 4px 0;
-  border-bottom: 2px solid #FF0800;
+  border-bottom: 2px solid $primary;
 }
 
 #workspaces button.urgent {
-  background: #A54242;
-  color: #FFFFFF;
+  background: $alert;
+  color: $foreground;
 }
 
 #workspaces button.empty {
-  color: #A9B1D6;
+  color: $disabled;
+}
+
+#window {
+  //padding: 0 6px;
 }
 
 #pulseaudio {
@@ -63,7 +77,7 @@ window#waybar {
 
 #pulseaudio.muted {
   background: #565f89;
-  color: #A9B1D6;
+  color: $disabled;
 }
 
 #temperature {
@@ -89,4 +103,3 @@ window#waybar {
   padding: 0 6px;
 }
 
-/*# sourceMappingURL=style.css.map */

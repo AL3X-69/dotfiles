@@ -5,7 +5,7 @@ Reboot
 Logout
 Lock
 Suspend
-Hibernate" | walker -nd)"
+Hibernate" | wofi -d)"
 
 case $ACTION in
     "Power off")
