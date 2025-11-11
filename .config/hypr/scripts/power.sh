@@ -5,7 +5,7 @@ Reboot
 Logout
 Lock
 Suspend
-Hibernate" | wofi -d)"
+Hibernate" | rofi -dmenu)"
 
 case $ACTION in
     "Power off")
