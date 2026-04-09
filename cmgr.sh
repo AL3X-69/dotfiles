@@ -9,14 +9,22 @@ declare -a config_dirs=(
   ".local/share/rofi"
 )
 
-if [[ "$1" == "pull" ]] then
+fn_pull() {
     for dir in "${config_dirs[@]}"; do
         rsync -Rav --delete "$HOME/./$dir" .
     done
-elif [[ "$1" == "push" ]] then
+}
+
+fn_push() {
     for dir in "${config_dirs[@]}"; do
         rsync -Rav "./$dir" "$HOME/"
     done
+}
+
+if [[ "$1" == "pull" ]]; then
+    fn_pull
+elif [[ "$1" == "push" ]]; then
+    fn_push
 else
-    echo "USAGE: ./cmgr.sh <pull | push>"
+    echo "USAGE: ./cmgr.sh <pull | push | patch | apply>"
 fi
