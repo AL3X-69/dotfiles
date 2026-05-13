@@ -42,13 +42,8 @@ hl.on("hyprland.start", function ()
     for _, v in ipairs(autostart) do exec(v) end
 end)
 
--- TODO: import monitor config => awaiting nwg update
-hl.monitor({
-    output = "eDP-1",
-    mode = "1920x1080@144.42",
-    position = "0x0",
-    scale = 1
-})
+-- MONITORS
+require("monitors")
 
 -- BINDS
 -- Window Management
@@ -59,7 +54,21 @@ bb("W", hl.dsp.window.float())
 bm("G", hl.dsp.group.toggle())
 b("SHIFT + F11", hl.dsp.window.fullscreen())
 bm("L", e("hyprlock"))
-bm("SHIFT + F", e(dirs.scripts .. "/windowpin.sh")) -- TODO: move bash script into this lua config
+bm("SHIFT + F", function ()
+    local w = hl.get_active_window()
+
+    if w == nil then return end
+
+    if not w.floating and not w.pinned then
+        hl.dsp.window.float()
+    end
+
+    hl.dsp.window.pin();
+
+    if w.floating and not w.pinned then
+        hl.dsp.window.float()
+    end
+end)
 
 -- Window Movement / Resizing
 bm("SHIFT + CONTROL + Left", function ()
@@ -234,7 +243,8 @@ hl.config({
         numlock_by_default = true,
         touchpad = {
             natural_scroll = true,
-            disable_while_typing = true
+            disable_while_typing = false
         }
     }
 })
+
