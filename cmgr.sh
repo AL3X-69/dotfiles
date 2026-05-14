@@ -1,12 +1,13 @@
 #!/bin/bash
 
 declare -a config_dirs=(
-  ".config/hypr"
-  ".config/waybar"
-  ".config/nvim"
-  ".config/wpaperd"
-  ".config/rofi"
-  ".local/share/rofi"
+    ".config/hypr"
+    ".config/waybar"
+    ".config/nvim"
+    ".config/wpaperd"
+    ".config/rofi"
+    ".config/matugen"
+    ".local/share/rofi"
 )
 
 fn_pull() {
