@@ -40,6 +40,7 @@ local wr = hl.window_rule
 -- AUTOSTART
 hl.on("hyprland.start", function ()
     for _, v in ipairs(autostart) do exec(v) end
+    hl.dispatch(hl.dsp.focus({ workspace = 1 }))
 end)
 
 -- MONITORS
