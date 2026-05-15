@@ -4,3 +4,5 @@
 .config/hypr/workspaces.conf
 .config/hypr/workspaces.lua
 .config/waybar/colors.css
+
+*.bak

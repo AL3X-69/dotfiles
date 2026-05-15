@@ -8,6 +8,7 @@ declare -a config_dirs=(
     ".config/wpaperd"
     ".config/rofi"
     ".config/matugen"
+    ".config/kitty"
     ".local/share/rofi"
 )
 
