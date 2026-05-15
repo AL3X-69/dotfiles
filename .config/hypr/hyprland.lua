@@ -73,32 +73,36 @@ end)
 -- Window Movement / Resizing
 bm("SHIFT + CONTROL + Left", function ()
     if hl.get_active_window().floating then
-        hl.dsp.window.move(-30, 0)
+        hl.dispatch(hl.dsp.window.move({ x = -30, y = 0 }))
     else
-        hl.dsp.window.move("l")
+        hl.dispatch(hl.dsp.window.move({ direction = "left" }))
     end
 end, { repeating = true })
+
 bm("SHIFT + CONTROL + Right", function ()
     if hl.get_active_window().floating then
-        hl.dsp.window.move(30, 0)
+        hl.dispatch(hl.dsp.window.move({ x = 30, y = 0 }))
     else
-        hl.dsp.window.move("r")
+        hl.dispatch(hl.dsp.window.move({ direction = "right" }))
     end
 end, { repeating = true })
+
 bm("SHIFT + CONTROL + Up", function ()
     if hl.get_active_window().floating then
-        hl.dsp.window.move(0, -30)
+        hl.dispatch(hl.dsp.window.move({ x = 0, y = -30 }))
     else
-        hl.dsp.window.move("u")
+        hl.dispatch(hl.dsp.window.move({ direction = "up" }))
     end
 end, { repeating = true })
+
 bm("SHIFT + CONTROL + Down", function ()
     if hl.get_active_window().floating then
-        hl.dsp.window.move(0, 30)
+        hl.dispatch(hl.dsp.window.move({ x = 0, y = 30 }))
     else
-        hl.dsp.window.move("d")
+        hl.dispatch(hl.dsp.window.move({ direction = "down" }))
     end
 end, { repeating = true })
+
 bm("mouse:272", hl.dsp.window.drag(), { mouse = true })
 bm("mouse:273", hl.dsp.window.resize(), { mouse = true })
 bm("Z", hl.dsp.window.drag(), { mouse = true })
@@ -106,9 +110,9 @@ bm("X", hl.dsp.window.resize(), { mouse = true })
 
 -- Workspaces
 bm("CONTROL + Right", hl.dsp.focus({ workspace = "r+1" }))
-bm("CONTROL + Left", hl.dsp.focus({workspace = "r-1" }))
-bm("CONTROL + Down", hl.dsp.focus({workspace = "empty" }))
-bm("CONTROL + ALT + Right", hl.dsp.window.move({workspace = "r+1" }))
+bm("CONTROL + Left", hl.dsp.focus({ workspace = "r-1" }))
+bm("CONTROL + Down", hl.dsp.focus({ workspace = "empty" }))
+bm("CONTROL + ALT + Right", hl.dsp.window.move({ workspace = "r+1" }))
 bm("CONTROL + ALT + Left", hl.dsp.window.move({ workspace = "r-1" }))
 bb("SHIFT + S", hl.dsp.window.move({ workspace = "special" }))
 bb("S", hl.dsp.workspace.toggle_special())
@@ -245,6 +249,12 @@ hl.config({
             natural_scroll = true,
             disable_while_typing = false
         }
+    },
+    dwindle = {
+        preserve_split = true
+    },
+    misc = {
+        middle_click_paste = false
     }
 })
 
