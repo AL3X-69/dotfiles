@@ -1,6 +1,7 @@
 #!/bin/bash
 
 declare -a config_dirs=(
+    ".zshrc"
     ".config/hypr"
     ".config/waybar"
     ".config/nvim"
