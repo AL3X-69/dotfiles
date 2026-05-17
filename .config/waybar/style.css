@@ -1,92 +1,46 @@
+@import "colors.css";
+
 * {
-  border: none;
-  border-radius: 0px;
-  font-family: "JetBrainsMono Nerd Font", "MesloLGS Nerd Font", "Font Awesome";
-  font-size: 9pt;
-  min-height: 0;
-  padding: 0;
-  margin: 0;
+    border: none;
+    border-radius: 0px;
+    font-family: "Agave NF";
+    font-size: 10pt;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
 }
 
 window#waybar {
-  background: rgba(64, 64, 64, 0.5);
-  color: #FFFFFF;
-  /*  border: 2px solid #ea9a97;*/
-  /*  border-radius: 12px;*/
+    background: transparent;
+    color: @on_background;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#mpd {
-  padding: 0 8px;
+widget > * {
+    padding: 0 2px;
 }
 
-#workspaces button {
-  padding: 0 2px;
-  color: #FFFFFF;
-  background: transparent;
+.modules-left {
+    border-radius: 2px;
+    border: 1px solid white;
+    margin-left: 10px;
+    background-color: @background;
+    padding: 0 5px;
+    box-shadow: 0px 0px 2px @shadow;
 }
 
-#workspaces button.active {
-  background: rgba(64, 64, 64, 0.6);
-  padding: 2px 4px 0;
-  border-bottom: 2px solid #FF0800;
+.modules-center {
+    border-radius: 2px;
+    border: 1px solid white;
+    background-color: @background;
+    padding: 0 5px;
+    box-shadow: 0px 0px 2px @shadow;
 }
 
-#workspaces button.urgent {
-  background: #A54242;
-  color: #FFFFFF;
+.modules-right {
+    border-radius: 2px;
+    border: 1px solid white;
+    margin-right: 10px;
+    background-color: @background;
+    padding: 0 5px;
+    box-shadow: 0px 0px 2px @shadow;
 }
-
-#workspaces button.empty {
-  color: #A9B1D6;
-}
-
-#pulseaudio {
-  background: none;
-  color: #c4a7e7;
-}
-
-#pulseaudio.muted {
-  background: #565f89;
-  color: #A9B1D6;
-}
-
-#temperature {
-  background: none;
-  color: #f6c177;
-  padding: 0 6px;
-}
-
-#memory {
-  background: none;
-  color: #9ccfd8;
-  padding: 0 6px;
-}
-
-#cpu {
-  background: none;
-  color: #eb6f92;
-  padding: 0 6px;
-}
-
-#clock {
-  color: #e0def4;
-  padding: 0 6px;
-}
-
-/*# sourceMappingURL=style.css.map */

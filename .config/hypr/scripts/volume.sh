@@ -2,12 +2,12 @@
 
 MUTED="$(pamixer --get-mute)"
 
-if [[ $MUTED ]] then
-    pamixer -u
+if [[ $MUTED == "true" ]]; then
+    swayosd-client --output-volume mute-toggle
 fi
 
 if [[ $1 == "u" ]]; then
-    pamixer -i 5
+    swayosd-client --output-volume raise
 elif [[ $1 == "d" ]]; then
-    pamixer -d 5
+    swayosd-client --output-volume lower
 fi

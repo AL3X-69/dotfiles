@@ -9,13 +9,13 @@ Hibernate" | rofi -dmenu)"
 
 case $ACTION in
     "Power off")
-        systemctl poweroff
+        hyprshutdown -t "Shutting Down..." -p "systemctl poweroff"
         ;;
     "Reboot")
-        systemctl reboot
+        hyprshutdown -t "Rebooting..." -p reboot
         ;;
     "Logout")
-        hyprctl dispatch exit 0
+        hyprshutdown -t "Logging out..."
         ;;
     "Lock")
         hyprlock

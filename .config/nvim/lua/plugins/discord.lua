@@ -10,7 +10,7 @@ return {
             icon = nil,
         },
         display = {
-            theme = 'default',
+            theme = 'atom',
             flavor = 'dark',
             view = 'full',
             swap_fields = false,

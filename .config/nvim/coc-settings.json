@@ -1,3 +1,4 @@
 {
     "sumneko-lua.enableNvimLuaDev": true,
+    "tsserver.tsdk": ".yarn/sdks/typescript/lib"
 }
