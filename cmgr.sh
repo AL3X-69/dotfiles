@@ -9,6 +9,7 @@ declare -a config_dirs=(
     ".config/rofi"
     ".config/matugen"
     ".config/kitty"
+    ".config/fontconfig"
     ".local/share/rofi"
 )
 
