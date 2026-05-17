@@ -45,10 +45,11 @@ end)
 
 -- MONITORS
 require("monitors")
+require("workspaces")
 
 -- BINDS
 -- Window Management
-bm("Q", hl.dsp.window.kill())
+bm("Q", hl.dsp.window.close())
 b("ALT + F4", hl.dsp.window.kill())
 bm("Delete", hl.dsp.exit())
 bb("W", hl.dsp.window.float())
@@ -242,6 +243,9 @@ wr({
 
 -- INPUT
 hl.config({
+    general = {
+        gaps_out = 10
+    },
     input = {
         kb_layout = "fr,us",
         kb_options = "grp:win_space_toggle",

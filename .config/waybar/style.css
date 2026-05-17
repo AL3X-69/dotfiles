@@ -15,10 +15,14 @@ window#waybar {
     color: @on_background;
 }
 
+widget > * {
+    padding: 0 2px;
+}
+
 .modules-left {
     border-radius: 2px;
     border: 1px solid white;
-    margin-left: 5px;
+    margin-left: 10px;
     background-color: @background;
     padding: 0 5px;
     box-shadow: 0px 0px 2px @shadow;
@@ -35,7 +39,7 @@ window#waybar {
 .modules-right {
     border-radius: 2px;
     border: 1px solid white;
-    margin-right: 5px;
+    margin-right: 10px;
     background-color: @background;
     padding: 0 5px;
     box-shadow: 0px 0px 2px @shadow;
