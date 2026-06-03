@@ -1,9 +1,7 @@
 # nwg-displays
-.config/hypr/monitors.conf
-.config/hypr/monitors.lua
-.config/hypr/workspaces.conf
-.config/hypr/workspaces.lua
-.config/waybar/colors.css
-.config/nvim/lazy-lock.json
+home/hypr/monitors.conf
+home/hypr/workspaces.conf
+home/waybar/colors.css
+home/nvim/lazy-lock.json
 
 *.bak

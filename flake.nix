@@ -4,6 +4,7 @@
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
         home-manager.url = "github:nix-community/home-manager";
+        nwg-displays.url = "github:nwg-piotr/nwg-displays/master";    
     };
 
     outputs = inputs@{ nixpkgs, home-manager, ... }: {

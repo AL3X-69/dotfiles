@@ -12,7 +12,7 @@ local apps = {
     terminal = "kitty",
     editor = "kitty nvim",
     explorer = "kitty -o confirm_os_window_close=0 yazi",
-    browser = "firefox-developer-edition",
+    browser = "firefox-devedition",
     menu = "rofi -dmenu",
     launcher = "rofi -show drun -show-icons"
 }
