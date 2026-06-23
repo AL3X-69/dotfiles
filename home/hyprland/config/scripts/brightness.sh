@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 CURRENT="$(brightnessctl g)"
 MAX="$(brightnessctl m)"

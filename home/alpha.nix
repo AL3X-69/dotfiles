@@ -5,10 +5,12 @@
     home.stateVersion = "26.05";
 
     imports = [
+        inputs.nix-flatpak.homeManagerModules.nix-flatpak
         ./hyprland
         ./kitty
         ./matugen
         ./wpaperd
+        ./apps
     ];
 
     home.packages = with pkgs; [
@@ -25,6 +27,20 @@
         kdePackages.okular
         fritzing
         kdePackages.kate
+    ];
+
+    services.flatpak.packages = [
+        "com.github.unrud.VideoDownloader"
+        "com.obsproject.Studio"
+        "com.usebottles.bottles"
+        "io.github.flattool.Warehouse"
+        "it.mijorus.smile"
+        "moe.launcher.sleepy-launcher"
+        "org.gimp.GIMP"
+        "org.inkscape.Inkscape"
+        "org.kde.krita"
+        "org.vinegarhq.Sober"
+        "org.vinegarhq.Vinegar"
     ];
 
     programs.zsh = {
@@ -50,7 +66,9 @@
         '';
     };
 
+    programs.thunderbird.enable = true;
     programs.gpg.enable = true;
+    programs.prismlauncher.enable = true;
     services.gpg-agent = {
         enable = true;
         pinentry.package = pkgs.pinentry-gtk2;

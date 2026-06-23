@@ -8,11 +8,12 @@
         hyprsunset
         hyprpolkitagent
     ];
+
     home.file.".config/hypr" = {
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/hyprland/config";
         recursive = true;
     };
 
     services.cliphist.enable = true;
-    services.swayosd.enable = true;
+    services.dunst.enable = true;
 }

@@ -55,25 +55,54 @@
     };
     programs.hyprland.enable = true;
     programs.zsh.enable = true;
+    programs.steam.enable = true;
+    systemd.services.swayosd-libinput-backend = {
+        description = "SwayOSD LibInput backend for listening to certain keys like CapsLock, ScrollLock, VolumeUp, etc.";
+        documentation = [ "https://github.com/ErikReider/SwayOSD" ];
+        wantedBy = [ "graphical.target" ];
+        partOf = [ "graphical.target" ];
+        after = [ "graphical.target" ];
+        serviceConfig = {
+            Type = "dbus";
+            BusName = "org.erikreider.swayosd";
+            ExecStart = "${pkgs.swayosd}/bin/swayosd-libinput-backend";
+            Restart = "on-failure";
+        };
+    };
 
     console.keyMap = "fr";
 
     users.users.alex6 = {
         isNormalUser = true;
         description = "Alex6";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" ];
         shell = pkgs.zsh;
     };
 
-
+    services.flatpak.enable = true;
     nixpkgs.config.allowUnfree = true;
+
+    services.blueman.enable = true;
+    virtualisation.docker.enable = true;
 
     environment.systemPackages = with pkgs; [
         neovim 
         wget
         fastfetch
         bat
+        swayosd
+        pamixer
+        playerctl
+        spotify
+        spicetify-cli
+        winboat
+        grimblast
     ];
+
+    hardware.bluetooth = {
+        enable = true;
+        powerOnBoot = false;
+    };
 
     system.stateVersion = "26.05"; 
 

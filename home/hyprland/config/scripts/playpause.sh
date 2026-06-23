@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 players=()
 while IFS= read -r line; do
