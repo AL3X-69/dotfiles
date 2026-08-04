@@ -119,7 +119,7 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export GEM_HOME="$(gem env user_gemhome)"
+#export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:/home/alex6/.spicetify:$GEM_HOME/bin"
 export PIPENV_VENV_IN_PROJECT=1
 
@@ -128,5 +128,5 @@ alias nano=nvim
 alias v=nvim
 alias sl=sl -Gd
 
-export EDITOR=nvim
+export EDITOR=/usr/bin/nvim
 export GRIMBLAST_EDITOR=org.gimp.GIMP

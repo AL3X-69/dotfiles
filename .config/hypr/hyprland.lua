@@ -26,7 +26,8 @@ local autostart = {
     "thunar --daemon",
     "nm-applet",
     "swayosd-server",
-    "$scripts/batterynotify.sh"
+    dirs.scripts .. "/batterynotify.sh",
+    "dunst"
 }
 
 -- Quick functions
@@ -42,6 +43,10 @@ hl.on("hyprland.start", function ()
     for _, v in ipairs(autostart) do exec(v) end
     hl.dispatch(hl.dsp.focus({ workspace = 1 }))
 end)
+
+-- NVIDIA
+hl.env("LIBVA_DRIVER_NAME", "nvidia")
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 
 -- MONITORS
 require("monitors")
