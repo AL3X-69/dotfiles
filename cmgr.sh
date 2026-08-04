@@ -30,16 +30,22 @@ fn_pull() {
 }
 
 fn_push() {
+    if [[ -n "$SUDO_USER" ]]; then
+        USER_HOME=$(getent passwd "$SUDO_USER" | cut -d: -f6)
+    else
+        USER_HOME="$HOME"
+    fi
+
     for dir in "${config_dirs[@]}"; do
         printf "\nPushing to $dir\n"
-        rsync -Rav "./$dir" "$HOME/"
+        rsync -Rav "./$dir" "$USER_HOME/"
     done
     if [[ $EUID -ne 0 ]]; then
         printf "\nScript not run as root, ignoring system-wide config files\n"
     else
-        for dir in "${config_dirs[@]}"; do
+        for dir in "${sudo_config[@]}"; do
             printf "\nPushing to $dir\n"
-            rsync -Rav "system$dir" "/"
+            rsync -Rav "system/./$dir" /
         done
     fi
 }
