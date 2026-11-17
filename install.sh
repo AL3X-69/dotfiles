@@ -25,4 +25,16 @@ mv nvim-linux-x86_64 ~/.local/opt/nvim
 ln -sf ~/.local/opt/nvim/bin/nvim ~/.local/bin/nvim
 rm nvim-linux-x86_64.tar.gz
 
+
+read -p "Is this a pve node? [Y/n]: " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    echo "Installing QEmu Guest Agent"
+    sudo apt install qemu-guest-agent
+    echo "Installing node_exporter"
+    
+    ./install_node_exporter.sh
+fi
+
 echo "Done ! bye bye :3"
