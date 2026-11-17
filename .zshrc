@@ -10,4 +10,5 @@ alias ls=ls -la
 
 export EDITOR=/usr/bin/nvim
 export PS1="%{%F{226}%}%n%{%F{202}%}@%{%F{9}%}%m %{%F{27}%}%~ %{%f%}$ "
+export PATH="$HOME/.local/bin:$PATH"
 
