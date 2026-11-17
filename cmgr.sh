@@ -2,20 +2,10 @@
 
 declare -a config_dirs=(
     ".zshrc"
-    ".config/hypr"
-    ".config/waybar"
     ".config/nvim"
-    ".config/wpaperd"
-    ".config/rofi"
-    ".config/matugen"
-    ".config/kitty"
-    ".config/fontconfig"
-    ".local/share/rofi"
 )
 
-declare -a sudo_config=(
-    "/etc/ly/config.ini"
-)
+declare -a sudo_config=()
 
 fn_pull() {
     for dir in "${config_dirs[@]}"; do
