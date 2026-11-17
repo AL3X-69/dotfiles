@@ -33,7 +33,7 @@ cd dotfiles
 git checkout server
 ./cmgr.sh push
 
-read -p "Is this a pve node? [Y/n]: " -n 1 -r
+read -p "Is this a pve node? [Y/n]: " -n 1 -r < /dev/tty
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
