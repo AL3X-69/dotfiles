@@ -1,15 +1,7 @@
-# My dotfiles
+# My *server* dotfiles
 
-Personal configuration for my linux laptop.
-
-- Distro: Arch Linux
-- DE: hyprland
-- Taskbar: waybar
-- Menus: rofi
-- Editor: neovim
-- Terminal: kitty
-- Shell: zsh + ohmyzsh
-- wallpaper manager: wpaperd
-
-These are pretty empty for the moment as I'm actively working on it
+You can use the quick install script with the following command:
+```
+curl -fsSL https://raw.githubusercontent.com/AL3X-69/dotfiles/refs/heads/server/install.sh | bash
+```
 
