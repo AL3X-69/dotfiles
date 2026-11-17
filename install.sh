@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo "
 ========================================================
 
@@ -25,9 +27,14 @@ mv nvim-linux-x86_64 ~/.local/opt/nvim
 ln -sf ~/.local/opt/nvim/bin/nvim ~/.local/bin/nvim
 rm nvim-linux-x86_64.tar.gz
 
+echo "Installing server dotfiles"
+git clone https://github.com/AL3X-69/dotfiles
+cd dotfiles
+git checkout server
+./cmgr.sh push
 
 read -p "Is this a pve node? [Y/n]: " -n 1 -r
-echo    # (optional) move to a new line
+echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     echo "Installing QEmu Guest Agent"
